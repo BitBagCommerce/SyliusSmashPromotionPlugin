@@ -1,0 +1,2 @@
+bitbag_sylius_smash_promotion_plugin:
+    resource: "@BitBagSyliusSmashPromotionPlugin/Resources/config/routing.yaml"
