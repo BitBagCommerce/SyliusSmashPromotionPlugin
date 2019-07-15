@@ -1,0 +1,67 @@
+sylius_grid:
+    grids:
+        bitbag_sylius_smash_promotion_admin_smash:
+            driver:
+                options:
+                    class: "%bitbag_sylius_smash_promotion.model.smash.class%"
+            sorting:
+                date: desc
+            fields:
+                image:
+                    type: twig
+                    label: bitbag_sylius_smash_promotion.ui.image
+                    path: .
+                    options:
+                        template: "@BitBagSyliusSmashPromotionPlugin/Admin/Smash/Grid/Field/image.html.twig"
+                date:
+                    type: datetime
+                    label: sylius.ui.date
+                    path: createdAt
+                    sortable: createdAt
+                    options:
+                        format: d-m-Y H:i:s
+                email:
+                    type: string
+                    label: bitbag_sylius_smash_promotion.ui.email
+                state:
+                    type: twig
+                    label: bitbag_sylius_smash_promotion.ui.state
+                    sortable: ~
+                    options:
+                        template: "@SyliusUi/Grid/Field/state.html.twig"
+                        vars:
+                            labels: "@BitBagSyliusSmashPromotionPlugin/Admin/Smash/Grid/Label/State"
+            filters:
+                email:
+                    type: string
+                    label: bitbag_sylius_smash_promotion.ui.email
+            actions:
+                item:
+                    update:
+                        type: update
+                    accept:
+                        type: apply_transition
+                        label: bitbag_sylius_smash_promotion.ui.accept
+                        icon: checkmark
+                        options:
+                            link:
+                                route: bitbag_smash_pormotion_admin_smash_accept
+                                parameters:
+                                    id: resource.id
+                            class: green
+                            transition: accept
+                            graph: bitbag_sylius_smash_promoton_smash
+                    reject:
+                        type: apply_transition
+                        label: bitbag_sylius_smash_promotion.ui.reject
+                        icon: remove
+                        options:
+                            link:
+                                route: bitbag_smash_pormotion_admin_smash_reject
+                                parameters:
+                                    id: resource.id
+                            class: yellow
+                            transition: reject
+                            graph: bitbag_sylius_smash_promoton_smash
+                    delete:
+                        type: delete

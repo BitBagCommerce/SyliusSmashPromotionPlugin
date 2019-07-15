@@ -1,0 +1,12 @@
+bitbag_sylius_smash_promotion_shop_smash_create:
+    path: /smashes
+    methods: [GET, POST]
+    defaults:
+        _controller: bitbag_sylius_smash_promotion.controller.smash:createAction
+        _sylius:
+            template: "@BitBagSyliusSmashPromotionPlugin/Shop/Smash/create.html.twig"
+            factory:
+                method: createForCustomer
+                arguments:
+                    - "expr:service('sylius.context.customer').getCustomer()"
+            flash: bitbag_sylius_smash_promotion.smash.wait_for_the_acceptation

@@ -1,0 +1,11 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% form_theme form '@SyliusShop/Form/theme.html.twig' %}
+
+{% block content %}
+    <div class="ui hidden divider"></div>
+
+    {{ form_start(form) }}
+        <button type="submit">send</button>
+    {{ form_end(form) }}
+{% endblock %}

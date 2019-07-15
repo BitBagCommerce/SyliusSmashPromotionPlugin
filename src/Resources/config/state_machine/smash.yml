@@ -1,0 +1,19 @@
+winzou_state_machine:
+    bitbag_sylius_smash_promoton_smash:
+        class: "%bitbag_sylius_smash_promotion.model.smash.class%"
+        property_path: state
+        graph: bitbag_sylius_smash_promoton_smash
+        state_machine_class: "%sylius.state_machine.class%"
+        states:
+            new: ~
+            accepted: ~
+            rejected: ~
+        transitions:
+            accept:
+                from: [new]
+                to: accepted
+            reject:
+                from: [new]
+                to: rejected
+        callbacks:
+            after: ~

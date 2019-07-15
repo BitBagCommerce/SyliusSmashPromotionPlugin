@@ -1,0 +1,15 @@
+sylius_resource:
+    resources:
+        bitbag_sylius_smash_promotion.smash:
+            driver: doctrine/orm
+            classes:
+                model: BitBag\SyliusSmashPromotionPlugin\Entity\Smash
+                interface: BitBag\SyliusSmashPromotionPlugin\Entity\SmashInterface
+                form: BitBag\SyliusSmashPromotionPlugin\Form\SmashType
+
+        bitbag_sylius_smash_promotion.smash_image:
+            driver: doctrine/orm
+            classes:
+                model: BitBag\SyliusSmashPromotionPlugin\Entity\SmashImage
+                interface: BitBag\SyliusSmashPromotionPlugin\Entity\SmashImageInterface
+                form: BitBag\SyliusSmashPromotionPlugin\Form\SmashImageType

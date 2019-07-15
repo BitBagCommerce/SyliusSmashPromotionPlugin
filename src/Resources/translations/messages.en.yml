@@ -1,0 +1,9 @@
+bitbag_sylius_smash_promotion:
+    ui:
+        smashes: Smashes
+        email: Email
+        manage_smashes: Manage smashes
+        reject: Reject
+        accept: Accept
+        state: State
+        image: Image

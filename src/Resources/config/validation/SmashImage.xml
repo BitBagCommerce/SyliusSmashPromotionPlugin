@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="BitBag\SyliusSmashPromotionPlugin\Entity\SmashImage">
+        <property name="file">
+            <constraint name="Image">
+                <option name="maxSize">1M</option>
+                <option name="maxSizeMessage">bitbag_sylius_smash_promotion.smash_image.file.max_size</option>
+                <option name="uploadIniSizeErrorMessage">bitbag_sylius_smash_promotion.smash_image.file.upload_ini_size</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+        </property>
+    </class>
+</constraint-mapping>

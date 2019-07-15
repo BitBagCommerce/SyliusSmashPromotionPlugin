@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="bitbag_sylius_smash_promotion.form.type.smash_image.validation_groups" type="collection">
+            <parameter>bitbag_sylius_smash_promotion</parameter>
+        </parameter>
+
+        <parameter key="bitbag_sylius_smash_promotion.form.type.smash.validation_groups" type="collection">
+            <parameter>bitbag_sylius_smash_promotion</parameter>
+        </parameter>
+    </parameters>
+
+    <services>
+        <service id="bitbag_sylius_smash_promotion.form.type.smash_image" class="BitBag\SyliusSmashPromotionPlugin\Form\SmashImageType">
+            <argument>%bitbag_sylius_smash_promotion.model.smash_image.class%</argument>
+            <argument>%bitbag_sylius_smash_promotion.form.type.smash_image.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="bitbag_sylius_smash_promotion.form.type.smash" class="BitBag\SyliusSmashPromotionPlugin\Form\SmashType">
+            <argument>%bitbag_sylius_smash_promotion.model.smash.class%</argument>
+            <argument>%bitbag_sylius_smash_promotion.form.type.smash.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+    </services>
+</container>

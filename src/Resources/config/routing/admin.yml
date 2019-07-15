@@ -1,0 +1,43 @@
+bitbag_smash_pormotion_admin_smash:
+    resource: |
+        alias: bitbag_sylius_smash_promotion.smash
+        section: admin
+        permission: true
+        templates: "@SyliusAdmin\\Crud"
+        except: ['show', 'create']
+        redirect: update
+        grid: bitbag_sylius_smash_promotion_admin_smash
+        vars:
+            all:
+                subheader: bitbag_sylius_smash_promotion.ui.manage_smashes
+            index:
+                icon: bullhorn
+    type: sylius.resource
+
+bitbag_smash_pormotion_admin_smash_accept:
+    path: /smashes/{id}/accept
+    methods: [PUT]
+    defaults:
+        _controller: bitbag_sylius_smash_promotion.controller.smash:applyStateMachineTransitionAction
+        _sylius:
+            permission: true
+            section: admin
+            state_machine:
+                graph: bitbag_sylius_smash_promoton_smash
+                transition: accept
+            redirect: referer
+            flash: bitbag_sylius_smash_promotions.smash.accept
+
+bitbag_smash_pormotion_admin_smash_reject:
+    path: /smashes/{id}/reject
+    methods: [PUT]
+    defaults:
+        _controller: bitbag_sylius_smash_promotion.controller.smash:applyStateMachineTransitionAction
+        _sylius:
+            permission: true
+            section: admin
+            state_machine:
+                graph: bitbag_sylius_smash_promoton_smash
+                transition: reject
+            redirect: referer
+            flash: bitbag_sylius_smash_promotions.smash.reject
