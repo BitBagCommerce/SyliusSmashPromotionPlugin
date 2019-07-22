@@ -1,5 +1,5 @@
 bitbag_sylius_smash_promotion_shop_smash_create:
-    path: /smashes
+    path: /smash-promotion
     methods: [GET, POST]
     defaults:
         _controller: bitbag_sylius_smash_promotion.controller.smash:createAction

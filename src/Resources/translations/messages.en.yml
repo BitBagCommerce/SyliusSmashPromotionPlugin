@@ -1,6 +1,8 @@
 bitbag_sylius_smash_promotion:
     ui:
         smashes: Smashes
+        smash_promotion: Smash promoton
+        no_active_smash_promotion: No active smash promotion
         email: Email
         name: Name
         code: Code

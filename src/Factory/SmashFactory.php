@@ -21,7 +21,7 @@ class SmashFactory implements SmashFactoryInterface
 
     public function createForCustomerAndCampaign(
         ?CustomerInterface $customer,
-        SmashPromotionCampaignInterface $smashPromotionCampaign
+        ?SmashPromotionCampaignInterface $smashPromotionCampaign
     ): SmashInterface {
         $smash = $this->createNew();
 

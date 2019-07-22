@@ -1,13 +1,31 @@
 {% extends '@SyliusShop/layout.html.twig' %}
 
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+
 {% form_theme form '@SyliusShop/Form/theme.html.twig' %}
 
 {% block content %}
-    <div class="ui hidden divider"></div>
+    <div class="ui padded segment">
+        <div class="ui two column very relaxed stackable grid">
+            <div class="column">
+                {% if smash.campaign is not null %}
+                    <h4 class="ui dividing header">{{ 'bitbag_sylius_smash_promotion.ui.smash_promotion'|trans }}</h4>
+                    {{ form_errors(form) }}
 
-    {{ dump() }}
+                    {{ form_start(form, {'action': path('bitbag_sylius_smash_promotion_shop_smash_create'), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
 
-    {{ form_start(form) }}
-        <button type="submit">send</button>
-    {{ form_end(form) }}
+                    {% if form.email is defined %}
+                        {{ form_row(form.email) }}
+                    {% endif %}
+
+                    {{ form_row(form.image) }}
+
+                    <button type="submit" class="ui blue submit button">{{ 'sylius.ui.login'|trans }}</button>
+                    {{ form_end(form) }}
+                {% else %}
+                    {{ messages.info('bitbag_sylius_smash_promotion.ui.no_active_smash_promotion') }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

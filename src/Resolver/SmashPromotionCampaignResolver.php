@@ -21,6 +21,6 @@ final class SmashPromotionCampaignResolver implements SmashPromotionCampaignReso
     {
         $campaigns = $this->smashPromotionCampaignRepository->findActive(new \DateTime());
 
-        return $campaigns[0];
+        return count($campaigns) > 0 ? current($campaigns) : null;
     }
 }

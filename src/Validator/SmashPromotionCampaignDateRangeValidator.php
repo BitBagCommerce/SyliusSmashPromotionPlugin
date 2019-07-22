@@ -42,6 +42,10 @@ final class SmashPromotionCampaignDateRangeValidator extends ConstraintValidator
             $value->getEndsAt()
         );
 
+        $smashPromotionCampaigns = array_filter($smashPromotionCampaigns, function (SmashPromotionCampaignInterface $smashPromotionCampaign) use ($value) {
+            return $value !== $smashPromotionCampaign;
+        });
+
         if (count($smashPromotionCampaigns) > 0) {
             $this->context
                 ->buildViolation($constraint->message)

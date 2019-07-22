@@ -24,4 +24,8 @@ bitbag_sylius_smash_promotion:
             max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
             upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
     smash:
+        email:
+            not_blank: Email cannot be blank.
+        image:
+            not_blank: Image cannot be blank.
         usage_limit: You can not send photos anymore.
