@@ -9,18 +9,33 @@
         <parameter key="bitbag_sylius_smash_promotion.form.type.smash.validation_groups" type="collection">
             <parameter>bitbag_sylius_smash_promotion</parameter>
         </parameter>
+
+        <parameter key="bitbag_sylius_smash_promotion.form.type.smash_promotion_campaign.validation_groups" type="collection">
+            <parameter>bitbag_sylius_smash_promotion</parameter>
+        </parameter>
     </parameters>
 
     <services>
-        <service id="bitbag_sylius_smash_promotion.form.type.smash_image" class="BitBag\SyliusSmashPromotionPlugin\Form\SmashImageType">
+        <service id="bitbag_sylius_smash_promotion.form.type.smash_image" class="BitBag\SyliusSmashPromotionPlugin\Form\Type\SmashImageType">
             <argument>%bitbag_sylius_smash_promotion.model.smash_image.class%</argument>
             <argument>%bitbag_sylius_smash_promotion.form.type.smash_image.validation_groups%</argument>
             <tag name="form.type" />
         </service>
 
-        <service id="bitbag_sylius_smash_promotion.form.type.smash" class="BitBag\SyliusSmashPromotionPlugin\Form\SmashType">
+        <service id="bitbag_sylius_smash_promotion.form.type.smash" class="BitBag\SyliusSmashPromotionPlugin\Form\Type\SmashType">
             <argument>%bitbag_sylius_smash_promotion.model.smash.class%</argument>
             <argument>%bitbag_sylius_smash_promotion.form.type.smash.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="bitbag_sylius_smash_promotion.form.type.smash_promotion_campaign" class="BitBag\SyliusSmashPromotionPlugin\Form\Type\SmashPromotionCampaignType">
+            <argument>%bitbag_sylius_smash_promotion.model.smash_promotion_campaign.class%</argument>
+            <argument>%bitbag_sylius_smash_promotion.form.type.smash.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="bitbag_sylius_smash_promotion.form.type.promotion_choice" class="BitBag\SyliusSmashPromotionPlugin\Form\Type\PromotionChoiceType">
+            <argument type="service" id="sylius.repository.promotion" />
             <tag name="form.type" />
         </service>
     </services>

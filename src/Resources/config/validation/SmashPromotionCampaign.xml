@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="BitBag\SyliusSmashPromotionPlugin\Entity\SmashPromotionCampaign">
+        <constraint name="BitBag\SyliusSmashPromotionPlugin\Validator\Constraints\SmashPromotionCampaignDateRange">
+            <option name="groups">bitbag_sylius_smash_promotion</option>
+            <option name="message">bitbag_sylius_smash_promotion.smash_promotion_campaign.exists_date_range</option>
+        </constraint>
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">bitbag_sylius_smash_promotion.smash_promotion_campaign.name.not_blank</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="max">255</option>
+                <option name="minMessage">bitbag_sylius_smash_promotion.smash_promotion_campaign.name.min_length</option>
+                <option name="maxMessage">bitbag_sylius_smash_promotion.smash_promotion_campaign.name.max_length</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+        </property>
+        <property name="description">
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="max">255</option>
+                <option name="minMessage">bitbag_sylius_smash_promotion.smash_promotion_campaign.description.min_length</option>
+                <option name="maxMessage">bitbag_sylius_smash_promotion.smash_promotion_campaign.description.max_length</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+        </property>
+        <property name="usageLimit">
+            <constraint name="NotBlank">
+                <option name="message">bitbag_sylius_smash_promotion.smash_promotion_campaign.usage_limit.not_blank</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+        </property>
+        <property name="promotion">
+            <constraint name="NotBlank">
+                <option name="message">bitbag_sylius_smash_promotion.smash_promotion_campaign.promotion.not_blank</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+        </property>
+        <property name="startsAt">
+            <constraint name="NotBlank">
+                <option name="message">bitbag_sylius_smash_promotion.smash_promotion_campaign.starts_at.not_blank</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+        </property>
+        <property name="endsAt">
+            <constraint name="NotBlank">
+                <option name="message">bitbag_sylius_smash_promotion.smash_promotion_campaign.ends_at.not_blank</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+        </property>
+        <property name="code">
+            <constraint name="NotBlank">
+                <option name="message">bitbag_sylius_smash_promotion.smash_promotion_campaign.code.not_blank</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+            <constraint name="Regex">
+                <option name="message">bitbag_sylius_smash_promotion.smash_promotion_campaign.code.regex</option>
+                <option name="pattern">/^[\w-]*$/</option>
+                <option name="groups">bitbag_sylius_smash_promotion</option>
+            </constraint>
+        </property>
+    </class>
+</constraint-mapping>

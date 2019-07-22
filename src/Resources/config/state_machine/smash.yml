@@ -16,4 +16,8 @@ winzou_state_machine:
                 from: [new]
                 to: rejected
         callbacks:
-            after: ~
+            before:
+                bitbag_sylius_smash_promotion_resolve_promotion_coupon:
+                    on: ["accept"]
+                    do: ["@bitbag_sylius_smash_promotion.resolver.smash_promotion_coupon", "resolvePromotionCoupon"]
+                    args: ["object"]

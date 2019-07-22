@@ -5,6 +5,10 @@
         https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
     <class name="BitBag\SyliusSmashPromotionPlugin\Entity\Smash">
+        <constraint name="BitBag\SyliusSmashPromotionPlugin\Validator\Constraints\SmashUsageLimit">
+            <option name="groups">bitbag_sylius_smash_promotion</option>
+            <option name="message">bitbag_sylius_smash_promotion.smash.usage_limit</option>
+        </constraint>
         <property name="email">
             <constraint name="NotBlank">
                 <option name="message">bitbag_sylius_smash_promotion.smash.email.not_blank</option>

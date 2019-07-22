@@ -1,0 +1,27 @@
+bitbag_sylius_smash_promotion:
+    smash_promotion_campaign:
+        name:
+            not_blank: Name cannot be blank.
+            min_length: Name must be at least {{ limit }} characters long.
+            max_length: Name can not be longer than {{ limit }} characters.
+        description:
+            min_length: Description must be at least {{ limit }} characters long.
+            max_length: Description can not be longer than {{ limit }} characters.
+        usage_limit:
+            not_blank: Usage limit cannot be blank.
+        promotion:
+            not_blank: Promotion cannot be blank.
+        starts_at:
+            not_blank: Starts at cannot be blank.
+        ends_at:
+            not_blank: Ends at cannot be blank.
+        code:
+            not_blank: Code cannot be blank.
+            regex: Code can only be comprised of letters, numbers, dashes and underscores.
+        exists_date_range: Campaign already with the given date range.
+    smash_image:
+        file:
+            max_size: The image is too big - {{ size }}{{ suffix }}. Maximum allowed size is {{ limit }}{{ suffix }}.
+            upload_ini_size: The image is too big. Maximum allowed size is {{ limit }}{{ suffix }}.
+    smash:
+        usage_limit: You can not send photos anymore.

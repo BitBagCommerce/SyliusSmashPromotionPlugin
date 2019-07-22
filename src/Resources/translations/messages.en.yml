@@ -2,8 +2,22 @@ bitbag_sylius_smash_promotion:
     ui:
         smashes: Smashes
         email: Email
+        name: Name
+        code: Code
         manage_smashes: Manage smashes
         reject: Reject
         accept: Accept
         state: State
         image: Image
+        smash_promotion_campaigns: Smash promotion campaigns
+        manage_smash_promotion_campaigns: Manage smash promotion campaigns
+        new_smash_promotion_campaign: New smash promotion campaign
+        edit_smash_promotion_campaign: Edit smash promotion campaign
+    form:
+        smash_promotion_campaign:
+            name: Name
+            description: Description
+            usage_limit: Usage limit
+            promotion: Promotion
+            starts_at: Starts at
+            ends_at: Ends at

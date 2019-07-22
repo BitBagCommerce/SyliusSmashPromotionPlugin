@@ -3,3 +3,4 @@ imports:
     - { resource: services.xml }
     - { resource: state_machine.yml }
     - { resource: grids.yml }
+    - { resource: mailer.yml }

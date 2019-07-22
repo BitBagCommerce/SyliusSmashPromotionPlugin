@@ -6,7 +6,9 @@ bitbag_sylius_smash_promotion_shop_smash_create:
         _sylius:
             template: "@BitBagSyliusSmashPromotionPlugin/Shop/Smash/create.html.twig"
             factory:
-                method: createForCustomer
+                method: createForCustomerAndCampaign
                 arguments:
                     - "expr:service('sylius.context.customer').getCustomer()"
+                    - "expr:service('bitbag_sylius_smash_promotion.resolver.smash_promotion_campaign').resolveCampaign()"
             flash: bitbag_sylius_smash_promotion.smash.wait_for_the_acceptation
+            redirect: referer

@@ -1,0 +1,36 @@
+sylius_grid:
+    grids:
+        bitbag_sylius_smash_promotion_admin_smash_promotion_campaign:
+            driver:
+                options:
+                    class: "%bitbag_sylius_smash_promotion.model.smash_promotion_campaign.class%"
+            fields:
+                name:
+                    type: twig
+                    label: bitbag_sylius_smash_promotion.ui.name
+                    path: .
+                    sortable: ~
+                    options:
+                        template: "@SyliusUi/Grid/Field/nameAndDescription.html.twig"
+                code:
+                    type: string
+                    label: bitbag_sylius_smash_promotion.ui.code
+                    sortable: ~
+            filters:
+                search:
+                    type: string
+                    label: bitbag_sylius_smash_promotion.ui.search
+                    options:
+                        fields: [name]
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+                bulk:
+                    delete:
+                        type: delete

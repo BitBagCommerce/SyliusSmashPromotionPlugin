@@ -5,5 +5,9 @@
         <service id="bitbag_sylius_smash_promotion.listener.menu.smash" class="BitBag\SyliusSmashPromotionPlugin\Menu\SmashesMenuBuilder">
             <tag name="kernel.event_listener" event="sylius.menu.admin.main" method="addSmashesItem" />
         </service>
+
+        <service id="bitbag_sylius_smash_promotion.listener.menu.smash_promotion_campaigns" class="BitBag\SyliusSmashPromotionPlugin\Menu\SmashPromotionCampaignsMenuBuilder">
+            <tag name="kernel.event_listener" event="sylius.menu.admin.main" method="addSmashPromotionCampaignsItem" />
+        </service>
     </services>
 </container>

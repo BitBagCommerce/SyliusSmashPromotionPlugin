@@ -14,6 +14,24 @@ bitbag_smash_pormotion_admin_smash:
                 icon: bullhorn
     type: sylius.resource
 
+bitbag_smash_pormotion_admin_smash_promotion_campaign:
+    resource: |
+        alias: bitbag_sylius_smash_promotion.smash_promotion_campaign
+        section: admin
+        permission: true
+        templates: "@SyliusAdmin\\Crud"
+        except: ['show']
+        redirect: update
+        grid: bitbag_sylius_smash_promotion_admin_smash_promotion_campaign
+        vars:
+            all:
+                subheader: bitbag_sylius_smash_promotion.ui.manage_smash_promotion_campaigns
+                templates:
+                    form: "@BitBagSyliusSmashPromotionPlugin/Admin/SmashPromotionCampaign/_form.html.twig"
+            index:
+                icon: bullhorn
+    type: sylius.resource
+
 bitbag_smash_pormotion_admin_smash_accept:
     path: /smashes/{id}/accept
     methods: [PUT]

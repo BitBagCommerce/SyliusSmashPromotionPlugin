@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BitBag\SyliusSmashPromotionPlugin\Entity;
 
 use Sylius\Component\Core\Model\CustomerInterface;
+use Sylius\Component\Core\Model\PromotionCouponInterface;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 
 class Smash implements SmashInterface
@@ -25,6 +26,12 @@ class Smash implements SmashInterface
 
     /** @var CustomerInterface|null */
     private $customer;
+
+    /** @var SmashPromotionCampaignInterface */
+    private $campaign;
+
+    /** @var PromotionCouponInterface|null */
+    private $promotionCoupon;
 
     public function __construct()
     {
@@ -78,5 +85,25 @@ class Smash implements SmashInterface
     public function setCustomer(?CustomerInterface $customer): void
     {
         $this->customer = $customer;
+    }
+
+    public function getCampaign(): ?SmashPromotionCampaignInterface
+    {
+        return $this->campaign;
+    }
+
+    public function setCampaign(?SmashPromotionCampaignInterface $campaign): void
+    {
+        $this->campaign = $campaign;
+    }
+
+    public function getPromotionCoupon(): ?PromotionCouponInterface
+    {
+        return $this->promotionCoupon;
+    }
+
+    public function setPromotionCoupon(?PromotionCouponInterface $promotionCoupon): void
+    {
+        $this->promotionCoupon = $promotionCoupon;
     }
 }

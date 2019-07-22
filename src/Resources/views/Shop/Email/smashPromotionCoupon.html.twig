@@ -1,0 +1,9 @@
+{% block subject %}
+    Your promotion coupon
+{% endblock %}
+
+{% block body %}
+    {% autoescape %}
+        Your promotion coupon: {{ smash.promotionCoupon.code }}
+    {% endautoescape %}
+{% endblock %}

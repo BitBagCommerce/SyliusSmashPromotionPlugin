@@ -1,2 +1,3 @@
 imports:
     - { resource: resources/smash.yml }
+    - { resource: resources/smash_promotion_campaign.yml }

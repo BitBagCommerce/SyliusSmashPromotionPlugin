@@ -1,0 +1,5 @@
+sylius_mailer:
+    emails:
+        smash_promotion_coupon:
+            subject: bitbag_sylius_smash_promotion.emails.smash_promotion_coupon.subject
+            template: "@BitBagSyliusSmashPromotionPlugin/Shop/Email/smashPromotionCoupon.html.twig"

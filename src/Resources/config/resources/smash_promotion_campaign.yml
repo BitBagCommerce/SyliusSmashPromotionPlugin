@@ -1,0 +1,9 @@
+sylius_resource:
+    resources:
+        bitbag_sylius_smash_promotion.smash_promotion_campaign:
+            driver: doctrine/orm
+            classes:
+                model: BitBag\SyliusSmashPromotionPlugin\Entity\SmashPromotionCampaign
+                interface: BitBag\SyliusSmashPromotionPlugin\Entity\SmashPromotionCampaignInterface
+                form: BitBag\SyliusSmashPromotionPlugin\Form\Type\SmashPromotionCampaignType
+                repository: BitBag\SyliusSmashPromotionPlugin\Repository\SmashPromotionCampaignRepository

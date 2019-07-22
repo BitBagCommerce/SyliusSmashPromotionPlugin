@@ -1,2 +1,3 @@
 imports:
     - { resource: grids/smash.yml }
+    - { resource: grids/smash_promotion_campaign.yml }

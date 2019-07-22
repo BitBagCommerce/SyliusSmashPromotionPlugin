@@ -5,11 +5,11 @@ sylius_resource:
             classes:
                 model: BitBag\SyliusSmashPromotionPlugin\Entity\Smash
                 interface: BitBag\SyliusSmashPromotionPlugin\Entity\SmashInterface
-                form: BitBag\SyliusSmashPromotionPlugin\Form\SmashType
+                form: BitBag\SyliusSmashPromotionPlugin\Form\Type\SmashType
 
         bitbag_sylius_smash_promotion.smash_image:
             driver: doctrine/orm
             classes:
                 model: BitBag\SyliusSmashPromotionPlugin\Entity\SmashImage
                 interface: BitBag\SyliusSmashPromotionPlugin\Entity\SmashImageInterface
-                form: BitBag\SyliusSmashPromotionPlugin\Form\SmashImageType
+                form: BitBag\SyliusSmashPromotionPlugin\Form\Type\SmashImageType
