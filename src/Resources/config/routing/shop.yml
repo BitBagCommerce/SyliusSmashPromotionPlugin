@@ -12,3 +12,13 @@ bitbag_sylius_smash_promotion_shop_smash_create:
                     - "expr:service('bitbag_sylius_smash_promotion.resolver.smash_promotion_campaign').resolveCampaign()"
             flash: bitbag_sylius_smash_promotion.smash.wait_for_the_acceptation
             redirect: referer
+
+bitbag_sylius_smash_promotion_shop_smash_index:
+    path: /account/smashes
+    methods: [GET]
+    defaults:
+        _controller: bitbag_sylius_smash_promotion.controller.smash:indexAction
+        _sylius:
+            section: shop_account
+            template: "@BitBagSyliusSmashPromotionPlugin/Shop/Account/Smash/index.html.twig"
+            grid: bitbag_sylius_smash_promotion_shop_smash

@@ -15,6 +15,8 @@ bitbag_sylius_smash_promotion:
         manage_smash_promotion_campaigns: Manage smash promotion campaigns
         new_smash_promotion_campaign: New smash promotion campaign
         edit_smash_promotion_campaign: Edit smash promotion campaign
+        browse_your_smashes: Browse your smashes
+        coupon_code: Coupon code
     form:
         smash_promotion_campaign:
             name: Name

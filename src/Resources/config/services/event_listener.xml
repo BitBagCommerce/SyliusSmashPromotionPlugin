@@ -5,6 +5,12 @@
         <service id="bitbag_sylius_smash_promotion.event_listener.smash_image_upload" class="BitBag\SyliusSmashPromotionPlugin\EventListener\SmashUploadListener">
             <argument type="service" id="sylius.image_uploader" />
             <tag name="kernel.event_listener" event="bitbag_sylius_smash_promotion.smash.pre_create" method="uploadImage" />
+            <tag name="kernel.event_listener" event="bitbag_sylius_smash_promotion.smash.post_delete" method="deleteImage" />
+        </service>
+
+        <service id="bitbag_sylius_smash_promotion.block_event_listener.admin.layout.javascripts" class="Sylius\Bundle\UiBundle\Block\BlockEventListener">
+            <argument type="string">@BitBagSyliusSmashPromotionPlugin/Admin/_javascripts.html.twig</argument>
+            <tag name="kernel.event_listener" event="sonata.block.event.sylius.admin.layout.javascripts" method="onBlockEvent" />
         </service>
     </services>
 </container>

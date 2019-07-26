@@ -4,7 +4,7 @@ bitbag_smash_pormotion_admin_smash:
         section: admin
         permission: true
         templates: "@SyliusAdmin\\Crud"
-        except: ['show', 'create']
+        except: ['show', 'create', 'update']
         redirect: update
         grid: bitbag_sylius_smash_promotion_admin_smash
         vars:

@@ -12,28 +12,28 @@ class SmashPromotionCampaign implements SmashPromotionCampaignInterface
     use TimestampableTrait;
 
     /** @var int */
-    private $id;
+    protected $id;
 
     /** @var string */
-    private $name;
+    protected $name;
 
     /** @var string */
-    private $code;
+    protected $code;
 
     /** @var string|null */
-    private $description;
+    protected $description;
 
     /** @var \DateTimeInterface */
-    private $startsAt;
+    protected $startsAt;
 
     /** @var \DateTimeInterface */
-    private $endsAt;
+    protected $endsAt;
 
     /** @var PromotionInterface */
-    private $promotion;
+    protected $promotion;
 
     /** @var int */
-    private $usageLimit;
+    protected $usageLimit;
 
     public function __construct()
     {

@@ -1,3 +1,4 @@
 imports:
-    - { resource: grids/smash.yml }
-    - { resource: grids/smash_promotion_campaign.yml }
+    - { resource: grids/admin/smash.yml }
+    - { resource: grids/admin/smash_promotion_campaign.yml }
+    - { resource: grids/shop/smash.yml }

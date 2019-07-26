@@ -33,4 +33,18 @@ final class SmashUploadListener
             $this->uploader->upload($image);
         }
     }
+
+    public function deleteImage(ResourceControllerEvent $event): void
+    {
+        /** @var SmashInterface $smash */
+        $smash = $event->getSubject();
+
+        Assert::isInstanceOf($smash, Smash::class);
+
+        $image = $smash->getImage();
+
+        if (null !== $image->getPath()) {
+            $this->uploader->remove($image->getPath());
+        }
+    }
 }

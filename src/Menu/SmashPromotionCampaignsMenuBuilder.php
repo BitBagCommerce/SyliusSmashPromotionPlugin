@@ -11,10 +11,10 @@ final class SmashPromotionCampaignsMenuBuilder
 {
     public function addSmashPromotionCampaignsItem(MenuBuilderEvent $event): void
     {
-        /** @var ItemInterface $catalogMenu */
-        $catalogMenu = $event->getMenu()->getChild('marketing');
+        /** @var ItemInterface $menu */
+        $menu = $event->getMenu()->getChild('marketing');
 
-        $catalogMenu
+        $menu
             ->addChild('smash_promotion_campaigns', ['route' => 'bitbag_sylius_smash_promotion_admin_smash_promotion_campaign_index'])
             ->setLabel('bitbag_sylius_smash_promotion.ui.smash_promotion_campaigns')
             ->setLabelAttribute('icon', 'bullhorn')

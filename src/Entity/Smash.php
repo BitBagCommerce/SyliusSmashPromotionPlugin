@@ -13,25 +13,25 @@ class Smash implements SmashInterface
     use TimestampableTrait;
 
     /** @var int */
-    private $id;
+    protected $id;
 
     /** @var string */
-    private $state = self::STATUS_NEW;
+    protected $state = self::STATUS_NEW;
 
     /** @var SmashImageInterface */
-    private $image;
+    protected $image;
 
     /** @var string */
-    private $email;
+    protected $email;
 
     /** @var CustomerInterface|null */
-    private $customer;
+    protected $customer;
 
     /** @var SmashPromotionCampaignInterface */
-    private $campaign;
+    protected $campaign;
 
     /** @var PromotionCouponInterface|null */
-    private $promotionCoupon;
+    protected $promotionCoupon;
 
     public function __construct()
     {

@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace BitBag\SyliusSmashPromotionPlugin\Validator;
 
 use BitBag\SyliusSmashPromotionPlugin\Entity\SmashInterface;
+use BitBag\SyliusSmashPromotionPlugin\Repository\SmashRepositoryInterface;
 use BitBag\SyliusSmashPromotionPlugin\Validator\Constraints\SmashUsageLimit;
-use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Webmozart\Assert\Assert;
 
 final class SmashUsageLimitValidator extends ConstraintValidator
 {
-    /** @var RepositoryInterface */
+    /** @var SmashRepositoryInterface */
     private $smashRepository;
 
-    public function __construct(RepositoryInterface $smashRepository)
+    public function __construct(SmashRepositoryInterface $smashRepository)
     {
         $this->smashRepository = $smashRepository;
     }
@@ -35,17 +35,7 @@ final class SmashUsageLimitValidator extends ConstraintValidator
 
         $campaign = $value->getCampaign();
 
-        if (null === $value->getCustomer()) {
-            $smashes = $this->smashRepository->findBy([
-                'email' => $value->getEmail(),
-                'campaign' => $campaign,
-            ]);
-        } else {
-            $smashes = $this->smashRepository->findBy([
-                'customer' => $value->getCustomer(),
-                'campaign' => $campaign,
-            ]);
-        }
+        $smashes = $this->smashRepository->findByCustomerOrEmail($value->getCustomer(), $value->getEmail());
 
         if (count($smashes) >= $campaign->getUsageLimit()) {
             $this->context

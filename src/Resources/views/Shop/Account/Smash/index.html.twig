@@ -1,0 +1,15 @@
+{% extends '@SyliusShop/Account/layout.html.twig' %}
+
+{% block breadcrumb %}
+    {% include '@BitBagSyliusSmashPromotionPlugin/Shop/Account/Smash/Index/_breadcrumb.html.twig' %}
+{% endblock %}
+
+{% block subcontent %}
+    {% include '@BitBagSyliusSmashPromotionPlugin/Shop/Account/Smash/Index/_header.html.twig' %}
+
+    {{ sonata_block_render_event('bitbag_sylius_smash_promotion.shop.account.smash.index.after_content_header', {'smashes': smashes}) }}
+
+    {{ sylius_grid_render(resources, '@SyliusShop/Grid/_default.html.twig') }}
+
+    {{ sonata_block_render_event('bitbag_sylius_smash_promotion.shop.account.smash.index.after_grid', {'smashes': smashes}) }}
+{% endblock %}
